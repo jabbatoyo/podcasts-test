@@ -1,34 +1,30 @@
-# podcasts-test
+# React + TypeScript + Vite
 
-## App Description
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-App shows a list of podcasts, clicking on a podcast shows the details and a list of episodes that belong to the 
-podcast, when you get the list of episodes you can click and see the details of the episode and play the episode again.
+Currently, two official plugins are available:
 
-## NODE version 18 >
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Stats
+## Expanding the ESLint configuration
 
-- styled-component
-- react-router-dom
-- @testing-library/react
-- @testing-library/jest-dom
-- react-query
-- msw
-- vitest
-- eslint
-- jsdom
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Folder structure
+- Configure the top-level `parserOptions` property like this:
 
-- Components
-- Config
-- Hooks
-- routes
-- Mooks
-- Pages
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Operation
-
-for the proper functioning of the project, you must first make a copy of env.example
-in the root and run the command npm run vite or yarn vite, to run the tests npm run test or yarn test
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
