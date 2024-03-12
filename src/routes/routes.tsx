@@ -6,6 +6,7 @@ import { Layout } from "../components";
 // views
 import HomePage from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
+import NotFoundPage from "../pages/NotFoundPage";
 
 export const BASE_URL = "/";
 
@@ -30,6 +31,10 @@ const routes: RouteObject[] = [
         loader: loaderPodcastWithEpisodes,
       },
     ],
+  },
+  {
+    path: `*`,
+    element: <NotFoundPage />,
   },
 ];
 
