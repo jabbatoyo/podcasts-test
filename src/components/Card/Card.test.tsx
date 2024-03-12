@@ -1,53 +1,34 @@
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-
-//customHooks
-import { FavouriteProvider } from "../../context/favouritesContext";
 
 //component
 import Card from "./index";
 
 describe("Card test container", () => {
-  const character = {
+  const podcast = {
     id: 1,
-    thumbnail: {
-      path: "http://i.annihil.us/u/prod/marvel/i/mg/6/20/52602f21f29ec",
-      extension: "jpg",
-    },
-    description:
-      "Rick Jones has been Hulks best bud since day one, but now hes more than a friend",
-    name: "Capital Marvel",
+    img: "https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/23/af/d5/23afd583-d4a1-a5a5-024f-9a8556aa4aa1/mza_10050319290971063684.jpg/170x170bb.png",
+    title: "test title",
+    author: "author testing podcast",
   };
-
   beforeEach(() => {
     render(
       <BrowserRouter>
-        <FavouriteProvider>
-          <Card character={character} />
-        </FavouriteProvider>
+        <Card podcast={podcast} />
       </BrowserRouter>
     );
   });
 
   test("Render component card", () => {
-    const card = screen.getAllByTestId("card-character-content");
+    const card = screen.getByTestId("card-podcast-content");
     expect(card).toBeTruthy();
   });
 
-  test("Card contain correct character name Capital Marvel", () => {
-    const button = screen.getByText("Capital Marvel");
-    expect(button).toBe;
+  test("Card contain correct podcast title (test title)", () => {
+    expect(screen.getByText("test title")).toBe;
   });
 
-  test("action add fovourite clicked and show button remove favourite", () => {
-    const removeFavourite = screen.getByTestId("heart-added-favourite");
-    fireEvent.click(removeFavourite);
-    expect(screen.getByTestId("heart-removed-favourite")).toBeDefined();
-  });
-
-  test("action remove favourite is clicked and show button add favourite", () => {
-    const removeFavourite = screen.getByTestId("heart-removed-favourite");
-    fireEvent.click(removeFavourite);
-    expect(screen.getByTestId("heart-added-favourite")).toBeDefined();
+  test("Card contain correct podcast author (author testing podcast)", () => {
+    expect(screen.getByText("Author: author testing podcast")).toBe;
   });
 });

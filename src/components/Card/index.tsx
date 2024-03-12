@@ -3,7 +3,7 @@ import { Container } from "./card.styles";
 
 const Card = ({ podcast: { id, img, title, author } }: { podcast: any }) => {
   return (
-    <Container to={`/podcast/${id}`} data-testid="card-character-content">
+    <Container to={`/podcast/${id}`} data-testid="card-podcast-content">
       <div className="img-container">
         <img src={img} alt={title} />
       </div>
