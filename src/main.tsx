@@ -5,9 +5,10 @@ import { createAppRouter } from "./routes/index.tsx";
 
 //styles
 import "./main.css";
+import { Layout } from "./components/index.ts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={createAppRouter()} />
+    <RouterProvider fallbackElement={<Layout />} router={createAppRouter()} />
   </React.StrictMode>
 );
