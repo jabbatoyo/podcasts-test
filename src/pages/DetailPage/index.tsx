@@ -2,7 +2,7 @@
 import usePodcast from "../../hooks/usePodscast";
 //components
 import DetailTableEpisodes from "./components/DetailTableEpisodes";
-import { DetailCardPodcast } from "../../components";
+import DetailCardPodcast from "./components/DetailCardPodcast";
 import DetailEpisode from "./components/DetailEpisode";
 //styles
 import { Container } from "./Detail.styles";
