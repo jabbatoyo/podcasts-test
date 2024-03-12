@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# marvel-test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## App Description
 
-Currently, two official plugins are available:
+App shows a list of marvel heroes, clicking on a hero shows the details of the hero and the related comics, the app provides a search engine where you can search for all the super
+heroes that begin with the intruduced data, you can add or remove to favorites the heroes that you require and in the favorites view you can see all the heroes added.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## NODE version 18 >
 
-## Expanding the ESLint configuration
+## Stats
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- styled-component
+- react-router-dom
+- @testing-library/react
+- @testing-library/jest-dom
+- msw
+- vitest
+- eslint
+- jsdom
 
-- Configure the top-level `parserOptions` property like this:
+## Folder structure
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Components
+- Config
+- Hooks
+- routes
+- Mooks
+- Pages
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Operation
+
+for the proper functioning of the project, you must first make a copy of env.example
+in the root and run the command npm run vite or yarn vite, to run the tests npm run test or yarn test
