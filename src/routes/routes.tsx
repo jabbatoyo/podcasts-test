@@ -1,12 +1,11 @@
 import { RouteObject } from "react-router-dom";
-import { loaderPodcast, loaderPodcasts } from "./loaders";
+import { loaderPodcastWithEpisodes, loaderPodcasts } from "./loaders";
 
 //components
 import { Layout } from "../components";
 // views
 import HomePage from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
-import EpisodePage from "../pages/EpisodePage";
 
 export const BASE_URL = "/";
 
@@ -21,13 +20,14 @@ const routes: RouteObject[] = [
         loader: loaderPodcasts,
       },
       {
-        path: `${BASE_URL}podcast/{podcastId}`,
+        path: `${BASE_URL}podcast/:podcastId`,
         element: <DetailPage />,
-        loader: () => loaderPodcast,
+        loader: loaderPodcastWithEpisodes,
       },
       {
-        path: `${BASE_URL}podcast/{podcastId}/episode/{episodeId}`,
-        element: <EpisodePage />,
+        path: `${BASE_URL}podcast/:podcastId/episode/:episodeId`,
+        element: <DetailPage />,
+        loader: loaderPodcastWithEpisodes,
       },
     ],
   },
