@@ -21,9 +21,25 @@ export const loaderPodcasts: LoaderFunction = async () => {
   return res;
 };
 
-export const loaderPodcast: LoaderFunction = async ({ params }) => {
-  const { id } = params;
-  const res = await getPodcast(String(id));
+export const loaderPodcastWithEpisodes: LoaderFunction = async ({ params }) => {
+  const podcastsLocalStorage = JSON.parse(
+    localStorage.getItem(APP_LOCALSTORAGE_KEY) as any
+  );
 
-  return res;
+  if (
+    podcastsLocalStorage ||
+    !isLocalStogageExpired(podcastsLocalStorage?.timestamp)
+  ) {
+    const { podcastId } = params;
+    const { value } = podcastsLocalStorage;
+    const podcast = value.find(
+      (item: PodcastDto) => Number(item.id) === Number(podcastId)
+    );
+    const res = await getEpidodes(String(podcastId));
+    return {
+      ...podcast,
+      episodes: res,
+    };
+  }
+  return [];
 };
