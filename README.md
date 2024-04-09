@@ -1,9 +1,8 @@
-# marvel-test
+# podcast-test
 
 ## App Description
 
-App shows a list of marvel heroes, clicking on a hero shows the details of the hero and the related comics, the app provides a search engine where you can search for all the super
-heroes that begin with the intruduced data, you can add or remove to favorites the heroes that you require and in the favorites view you can see all the heroes added.
+App shows a list of Podcast, clicking on a Podcast shows the detail and a list of related episodes, clicking on an episode shows the detail and a player of the episode, the application provides a search for Podcast on the home page.
 
 ## NODE version 18 >
 
@@ -13,7 +12,7 @@ heroes that begin with the intruduced data, you can add or remove to favorites t
 - react-router-dom
 - @testing-library/react
 - @testing-library/jest-dom
-- msw
+
 - vitest
 - eslint
 - jsdom
@@ -24,10 +23,9 @@ heroes that begin with the intruduced data, you can add or remove to favorites t
 - Config
 - Hooks
 - routes
-- Mooks
 - Pages
 
 ## Operation
 
-for the proper functioning of the project, you must first make a copy of env.example
+for the proper functioning of the project, you must first create file .env and copy data of env.example
 in the root and run the command npm run vite or yarn vite, to run the tests npm run test or yarn test
